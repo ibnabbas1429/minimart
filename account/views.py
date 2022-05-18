@@ -10,6 +10,12 @@ import random
 
 # Create your views here.
 
+
+def login(request):
+    return render(request, "login.html")
+
+
+"""
 def login(request):
 
     form = ProfileForm(request.POST or None)
@@ -18,6 +24,8 @@ def login(request):
     context = {'form' : form}
 
     return render(request, "login.html", context)
+"""
+
 
 def register(request):
     if request.method == 'POST':
@@ -33,14 +41,16 @@ def register(request):
             return render(request,'register.html' , context)
             
         user = User(email = email , first_name = name)
-        print(user)
+        
         user.save()
         otp = str(random.randint(1000 , 9999))
         profile = Profile(user = user , mobile=mobile , otp = otp) 
         profile.save()
+
         """send_otp(mobile, otp)
         request.session['mobile'] = mobile
         return redirect('otp')"""
+
     return render(request,'register.html')
 
     """if request.method == "POST":

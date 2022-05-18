@@ -9,8 +9,8 @@ class Course(models.Model):
     published = models.DateTimeField(default = TIME_ZONE)
     
     Created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    updated = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Course {self.title} created by {self.author}  was on "
+        return f"Course {self.title} created by {self.author}  was on  {self.published}"
         
