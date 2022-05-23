@@ -18,8 +18,11 @@ from django.urls import path,include
 from account.views import *
 from courses.views import *
 
+appname = 'account'
 urlpatterns = [
     path('', include('account.urls')),
     path('courses/', include('courses.urls')),
+    path('restfulapi/', include('restfulapi.urls')),
+
     path('admin/', admin.site.urls),
 ]

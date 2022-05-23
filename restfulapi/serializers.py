@@ -6,7 +6,10 @@ from django.db .models import fields
 
 from rest_framework import serializers
 
-from .models Commodity
+from .models import Commodity
 
 
-class ItemSerializer
+class CommoditySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Commodity
+        fields = ("category", "subcategory", "name", "price")

@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account',
     'cart',
-    'courses'
+    'courses',
+    'rest_framework',
+    'restfulapi',
+
 ]
 
 MIDDLEWARE = [
